@@ -1,0 +1,7 @@
+[Unit]
+Description=Space Pointer Battery Watcher
+After=network.target
+
+
+[Service]
+ExecStart=/bin/bash /home/pi/SpacePointer/RaspberryPi/lowBattery.sh

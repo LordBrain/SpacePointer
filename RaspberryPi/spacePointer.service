@@ -1,0 +1,13 @@
+[Unit]
+Description=Space Pointer Menu Service file
+After=network.target
+
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /home/pi/SpacePointer/RaspberryPi/main.py
+WorkingDirectory=/home/pi/SpacePointer/RaspberryPi
+
+
+[Install]
+WantedBy=multi-user.target
