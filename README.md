@@ -19,48 +19,49 @@ I wanted to expand it to point at more things then just the ISS and make it easy
 ![Driver](images/pointer-driver.jpg)
 
 ## How to install.
+
 1. Setup your Raspberry Pi and connect it to your Wi-Fi.
-  * this has to be done at least once. But the data for the space station and other satellites needs to be updated often.
+   * this has to be done at least once. But the data for the space station and other satellites needs to be updated often.
 1. Enable the SPI and GPIO on the Raspberry Pi.
 1. Make sure its up to date.
-  1. ```sudo apt-get update```
-  1. ```sudo apt-get upgrade```
+    1. ```sudo apt-get update```
+    1. ```sudo apt-get upgrade```
 1. Give the Pi a reboot here.
-  1. ```sudo reboot```
+    1. ```sudo reboot```
 1. Install python dev.
-  1. ```sudo apt-get install python-dev```
-  1. ```sudo python setup.py install```
+    1. ```sudo apt-get install python-dev```
+    1. ```sudo python setup.py install```
 1. Install python GPIO.
-  1. ```sudo apt-get install python-rpi.gpio```
+    1. ```sudo apt-get install python-rpi.gpio```
 1. Install skyfield. It does all the space math for us.
-  1. ```pip install skyfield```
+    1. ```pip install skyfield```
 1. Install Adafruit library for the display.
-  1. ```git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git```
-  1. ```cd Adafruit_Python_SSD1306/```
-  1. ```sudo python setup.py install```
-  1. ```cd ..```
+    1. ```git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git```
+    1. ```cd Adafruit_Python_SSD1306/```
+    1. ```sudo python setup.py install```
+    1. ```cd ..```
 1. Clone this repo.
-  1. ```git clone https://github.com/blee1170/SpacePointer.git```
+    1. ```git clone https://github.com/blee1170/SpacePointer.git```
 1. Program the Arduino.
-  1. The declination will need to be configured for your location. Use http://magnetic-declination.com/ to find it. Update it on line 130 in the Arduino code.
-  1. Compass offset will also need to be set. I used this Arduino code to find it: https://github.com/jarzebski/Arduino-HMC5883L/tree/master/HMC5883L_calibrate
-  1. I did not setup the Raspberry Pi to program the Arduino, I used another computer because of the steps above.
-  1. Once the calibration offset and declination is set, you can write it to the Arduino.
+    1. The declination will need to be configured for your location. Use http://magnetic-declination.com/ to find it. Update it on line 130 in the Arduino code.
+    1. Compass offset will also need to be set. I used this Arduino code to find it: https://github.com/jarzebski/Arduino-HMC5883L/tree/master/HMC5883L_calibrate
+    1. I did not setup the Raspberry Pi to program the Arduino, I used another computer because of the steps above.
+    1. Once the calibration offset and declination is set, you can write it to the Arduino.
 1. Configure settings.
-  1. Update your latitude and longitude in the ```RaspberryPi/config.py``` file.
-  1. Also set what port and speed the Arduino will be listening on. (The defaults should be okay, unless you are using a USB hub or something).
+    1. Update your latitude and longitude in the ```RaspberryPi/config.py``` file.
+    1. Also set what port and speed the Arduino will be listening on. (The defaults should be okay, unless you are using a USB hub or something).
 1. Have the pointer start on startup.
-  1. Copy the systemd service file to /usr/lib/systemd/system/.
-  1. ```sudo cp RaspberryPi/spacePointer.service /usr/lib/systemd/system/```
-  1. Enable the service.
-  1. ```sudo systemctl enable spacePointer```
+    1. Copy the systemd service file to /usr/lib/systemd/system/.
+    1. ```sudo cp RaspberryPi/spacePointer.service /usr/lib/systemd/system/```
+    1. Enable the service.
+    1. ```sudo systemctl enable spacePointer```
 1. If you are using the adafruit powerboost you will want to enable the battery watcher service.
-  1. Copy the service file and timer to /usr/lib/systemd/system/.
-  1. ```sudo cp RaspberryPi/spacePointerBattery.* /usr/lib/systemd/system/```
-  1. Enable the timer.
-  1. ```sudo systemctl enable spacePointerBattery.timer```
-  1. Ensure the script is runable.
-  1. ```chmod +x lowBattery.sh```
+    1. Copy the service file and timer to /usr/lib/systemd/system/.
+    1. ```sudo cp RaspberryPi/spacePointerBattery.* /usr/lib/systemd/system/```
+    1. Enable the timer.
+    1. ```sudo systemctl enable spacePointerBattery.timer```
+    1. Ensure the script is runable.
+    1. ```chmod +x lowBattery.sh```
 
 ---
 ### Parts list
