@@ -74,6 +74,21 @@ I wanted to expand it to point at more things then just the ISS and make it easy
 * [Power Module](https://www.adafruit.com/product/2465) - Battery power is awesome.
 * [Battery](https://www.adafruit.com/product/353) - Poooooower.
 
+### Actobotics Parts
+* [Angle Bracket](https://www.servocity.com/90-single-angle-short-channel-bracket) x2
+* [Flat Dual Bracket](https://www.servocity.com/flat-dual-channel-bracket) x3
+* [Tube](https://www.servocity.com/1-00-aluminum-tubing) x1 6"
+* [Tube Clamp](https://www.servocity.com/1-bore-bottom-tapped-clamping-mounts) x2
+* [Tube Spacer](https://www.servocity.com/shafting-and-tubing-spacers) x1 (Its a 12 pack)
+* [Big Gear](https://www.servocity.com/1-50-aluminum-hub-mount-sprockets-0-250-pitch) x1 48T
+* [Clamping Hub](https://www.servocity.com/1-bore-clamping-hub-a) x1
+* [Small Gear](https://www.servocity.com/0-770-aluminum-hub-mount-sprockets-0-250-pitch) x1 16T
+* [Plastic Chain](https://www.servocity.com/plastic-chain-0-250) x2
+* [Screw Hub](https://www.servocity.com/770-set-screw-hubs) x1
+* [Server Mount](https://www.servocity.com/standard-servo-plate-c) x1
+* [Pillow Block](https://www.servocity.com/1-000-bore-quad-pillow-block) x2
+* [Stepper Motor Mount](https://www.adafruit.com/product/1297) x1 (Had to be modified to attach to the bracket)
+
 ---
 ## Hardware wiring
 ![alt SpacePointer Fritzing](images/SpacePointer_bb.png)
